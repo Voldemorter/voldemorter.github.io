@@ -46,6 +46,9 @@
       }
       .service-video-card {
       cursor: pointer;
+      position: relative;
+      z-index: 1;
+      transition: all 0.5s ease;
       }
       .service-video-card:hover .service-content {
       opacity: 0.3;
@@ -55,6 +58,11 @@
       opacity: 1;
       transition: opacity 0.3s ease;
       }
+      .service-video-card.expanded {
+      transform: scale(2);
+      z-index: 100;
+      position: relative;
+      }
       .video-play-btn {
       transition: transform 0.2s ease;
       }
@@ -63,6 +71,59 @@
       }
       .video-play-btn:active {
       transform: scale(0.95);
+      }
+      .video-controls {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      background: rgba(0,0,0,0.5);
+      padding: 5px;
+      border-radius: 4px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      }
+      .expanded .video-controls {
+      opacity: 1;
+      }
+      .progress-container {
+      flex-grow: 1;
+      height: 5px;
+      background: rgba(255,255,255,0.3);
+      margin: 0 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+      }
+      .progress-bar {
+      height: 100%;
+      background: #fff;
+      width: 0;
+      }
+      .volume-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      }
+      .volume-slider {
+      width: 0;
+      height: 5px;
+      background: rgba(255,255,255,0.3);
+      margin-left: 5px;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: width 0.3s ease;
+      position: relative;
+      }
+      .volume-container:hover .volume-slider {
+      width: 50px;
+      }
+      .volume-level {
+      height: 100%;
+      background: #fff;
+      width: 100%;
       }
     </style>
   </head>
@@ -653,8 +714,6 @@
             >
               <video
                 class="w-full h-full object-cover"
-                muted
-                loop
                 poster="https://public.readdy.ai/ai/img_res/7bc04f1ebdaa436522540ed1758ff648.jpg"
               >
                 <source
@@ -670,6 +729,22 @@
                 >
                   <i class="ri-play-fill ri-2x text-primary"></i>
                 </button>
+              </div>
+              <div class="video-controls">
+                <button class="play-pause-btn text-white">
+                  <i class="ri-play-fill ri-lg"></i>
+                </button>
+                <div class="progress-container">
+                  <div class="progress-bar"></div>
+                </div>
+                <div class="volume-container">
+                  <button class="volume-btn text-white">
+                    <i class="ri-volume-up-line ri-lg"></i>
+                  </button>
+                  <div class="volume-slider">
+                    <div class="volume-level"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -712,8 +787,6 @@
             >
               <video
                 class="w-full h-full object-cover"
-                muted
-                loop
                 poster="https://public.readdy.ai/ai/img_res/a3288a8ec98dd13abe8cc94e97a9d7a0.jpg"
               >
                 <source
@@ -729,6 +802,22 @@
                 >
                   <i class="ri-play-fill ri-2x text-primary"></i>
                 </button>
+              </div>
+              <div class="video-controls">
+                <button class="play-pause-btn text-white">
+                  <i class="ri-play-fill ri-lg"></i>
+                </button>
+                <div class="progress-container">
+                  <div class="progress-bar"></div>
+                </div>
+                <div class="volume-container">
+                  <button class="volume-btn text-white">
+                    <i class="ri-volume-up-line ri-lg"></i>
+                  </button>
+                  <div class="volume-slider">
+                    <div class="volume-level"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -771,8 +860,6 @@
             >
               <video
                 class="w-full h-full object-cover"
-                muted
-                loop
                 poster="https://public.readdy.ai/ai/img_res/b95acee32f3afdcc140ada9d45cebce6.jpg"
               >
                 <source
@@ -788,6 +875,22 @@
                 >
                   <i class="ri-play-fill ri-2x text-primary"></i>
                 </button>
+              </div>
+              <div class="video-controls">
+                <button class="play-pause-btn text-white">
+                  <i class="ri-play-fill ri-lg"></i>
+                </button>
+                <div class="progress-container">
+                  <div class="progress-bar"></div>
+                </div>
+                <div class="volume-container">
+                  <button class="volume-btn text-white">
+                    <i class="ri-volume-up-line ri-lg"></i>
+                  </button>
+                  <div class="volume-slider">
+                    <div class="volume-level"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -830,8 +933,6 @@
             >
               <video
                 class="w-full h-full object-cover"
-                muted
-                loop
                 poster="https://public.readdy.ai/ai/img_res/919b56aefc80d8cde655be8d7161ce92.jpg"
               >
                 <source
@@ -847,6 +948,22 @@
                 >
                   <i class="ri-play-fill ri-2x text-primary"></i>
                 </button>
+              </div>
+              <div class="video-controls">
+                <button class="play-pause-btn text-white">
+                  <i class="ri-play-fill ri-lg"></i>
+                </button>
+                <div class="progress-container">
+                  <div class="progress-bar"></div>
+                </div>
+                <div class="volume-container">
+                  <button class="volume-btn text-white">
+                    <i class="ri-volume-up-line ri-lg"></i>
+                  </button>
+                  <div class="volume-slider">
+                    <div class="volume-level"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -889,8 +1006,6 @@
             >
               <video
                 class="w-full h-full object-cover"
-                muted
-                loop
                 poster="https://public.readdy.ai/ai/img_res/e1870ad74a4ad54fde6b863b9ca668ae.jpg"
               >
                 <source
@@ -906,6 +1021,22 @@
                 >
                   <i class="ri-play-fill ri-2x text-primary"></i>
                 </button>
+              </div>
+              <div class="video-controls">
+                <button class="play-pause-btn text-white">
+                  <i class="ri-play-fill ri-lg"></i>
+                </button>
+                <div class="progress-container">
+                  <div class="progress-bar"></div>
+                </div>
+                <div class="volume-container">
+                  <button class="volume-btn text-white">
+                    <i class="ri-volume-up-line ri-lg"></i>
+                  </button>
+                  <div class="volume-slider">
+                    <div class="volume-level"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -948,8 +1079,6 @@
             >
               <video
                 class="w-full h-full object-cover"
-                muted
-                loop
                 poster="https://public.readdy.ai/ai/img_res/73181291f33f8c6ce9a9a0b06d36ddb1.jpg"
               >
                 <source
@@ -965,6 +1094,22 @@
                 >
                   <i class="ri-play-fill ri-2x text-primary"></i>
                 </button>
+              </div>
+              <div class="video-controls">
+                <button class="play-pause-btn text-white">
+                  <i class="ri-play-fill ri-lg"></i>
+                </button>
+                <div class="progress-container">
+                  <div class="progress-bar"></div>
+                </div>
+                <div class="volume-container">
+                  <button class="volume-btn text-white">
+                    <i class="ri-volume-up-line ri-lg"></i>
+                  </button>
+                  <div class="volume-slider">
+                    <div class="volume-level"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1007,8 +1152,6 @@
             >
               <video
                 class="w-full h-full object-cover"
-                muted
-                loop
                 poster="https://public.readdy.ai/ai/img_res/79fb815c5cb4957386f0e2955166a1b6.jpg"
               >
                 <source
@@ -1024,6 +1167,22 @@
                 >
                   <i class="ri-play-fill ri-2x text-primary"></i>
                 </button>
+              </div>
+              <div class="video-controls">
+                <button class="play-pause-btn text-white">
+                  <i class="ri-play-fill ri-lg"></i>
+                </button>
+                <div class="progress-container">
+                  <div class="progress-bar"></div>
+                </div>
+                <div class="volume-container">
+                  <button class="volume-btn text-white">
+                    <i class="ri-volume-up-line ri-lg"></i>
+                  </button>
+                  <div class="volume-slider">
+                    <div class="volume-level"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1066,8 +1225,6 @@
             >
               <video
                 class="w-full h-full object-cover"
-                muted
-                loop
                 poster="https://public.readdy.ai/ai/img_res/3ab160995bcc3ad64c99fb3ab273c8e9.jpg"
               >
                 <source
@@ -1083,6 +1240,22 @@
                 >
                   <i class="ri-play-fill ri-2x text-primary"></i>
                 </button>
+              </div>
+              <div class="video-controls">
+                <button class="play-pause-btn text-white">
+                  <i class="ri-play-fill ri-lg"></i>
+                </button>
+                <div class="progress-container">
+                  <div class="progress-bar"></div>
+                </div>
+                <div class="volume-container">
+                  <button class="volume-btn text-white">
+                    <i class="ri-volume-up-line ri-lg"></i>
+                  </button>
+                  <div class="volume-slider">
+                    <div class="volume-level"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1125,8 +1298,6 @@
             >
               <video
                 class="w-full h-full object-cover"
-                muted
-                loop
                 poster="https://public.readdy.ai/ai/img_res/537ca194045834a305f3b26c4c1c7a28.jpg"
               >
                 <source
@@ -1142,6 +1313,22 @@
                 >
                   <i class="ri-play-fill ri-2x text-primary"></i>
                 </button>
+              </div>
+              <div class="video-controls">
+                <button class="play-pause-btn text-white">
+                  <i class="ri-play-fill ri-lg"></i>
+                </button>
+                <div class="progress-container">
+                  <div class="progress-bar"></div>
+                </div>
+                <div class="volume-container">
+                  <button class="volume-btn text-white">
+                    <i class="ri-volume-up-line ri-lg"></i>
+                  </button>
+                  <div class="volume-slider">
+                    <div class="volume-level"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1742,46 +1929,211 @@
             // 服务项目视频卡片交互
             const serviceVideoCards = document.querySelectorAll(".service-video-card");
             const videoPlayBtns = document.querySelectorAll(".video-play-btn");
+            let activeCard = null;
             // 为每个服务卡片添加鼠标进入事件
             serviceVideoCards.forEach((card) => {
               const video = card.querySelector("video");
+              const playBtn = card.querySelector(".video-play-btn");
+              const playPauseBtn = card.querySelector(".play-pause-btn");
+              const progressBar = card.querySelector(".progress-bar");
+              const progressContainer = card.querySelector(".progress-container");
+              const volumeBtn = card.querySelector(".volume-btn");
+              const volumeLevel = card.querySelector(".volume-level");
+              const volumeSlider = card.querySelector(".volume-slider");
+
+              // 初始化视频音量
+              if (video) {
+                video.volume = 1;
+              }
+
               // 鼠标进入卡片时预加载视频
               card.addEventListener("mouseenter", function () {
-                if (video) {
+                if (activeCard && activeCard !== card) return;
+
+                if (video && !card.classList.contains("expanded")) {
                   video.load();
-                  video
-                    .play()
-                    .catch((e) => console.log("视频自动播放被阻止，需要用户交互"));
                 }
               });
-              // 鼠标离开卡片时暂停视频
+
+              // 鼠标离开卡片时，如果没有展开则暂停视频
               card.addEventListener("mouseleave", function () {
-                if (video) {
+                if (!card.classList.contains("expanded") && video) {
                   video.pause();
                   video.currentTime = 0;
-                }
-              });
-            });
-            // 为每个播放按钮添加点击事件
-            videoPlayBtns.forEach((btn) => {
-              btn.addEventListener("click", function (e) {
-                e.stopPropagation();
-                const card = this.closest(".service-video-card");
-                const video = card.querySelector("video");
-                const overlay = this.closest(".absolute");
-                if (video) {
-                  if (video.paused) {
-                    video.play();
-                    this.innerHTML = '<i class="ri-pause-fill ri-2x text-primary"></i>';
-                    overlay.style.backgroundColor = "rgba(30, 63, 102, 0.2)";
-                  } else {
-                    video.pause();
-                    this.innerHTML = '<i class="ri-play-fill ri-2x text-primary"></i>';
-                    overlay.style.backgroundColor = "rgba(30, 63, 102, 0.5)";
+                  if (playBtn) {
+                    playBtn.innerHTML = '<i class="ri-play-fill ri-2x text-primary"></i>';
+                  }
+                  if (playPauseBtn) {
+                    playPauseBtn.innerHTML = '<i class="ri-play-fill ri-lg"></i>';
                   }
                 }
               });
+
+              // 播放按钮点击事件
+              if (playBtn) {
+                playBtn.addEventListener("click", function (e) {
+                  e.stopPropagation();
+
+                  // 如果有其他展开的卡片，先关闭它
+                  if (activeCard && activeCard !== card) {
+                    closeExpandedCard(activeCard);
+                  }
+
+                  // 展开当前卡片
+                  card.classList.add("expanded");
+                  activeCard = card;
+
+                  const overlay = this.closest(".absolute");
+                  if (video) {
+                    video.muted = false;
+                    video.loop = false;
+                    video.play();
+                    this.style.display = "none";
+                    overlay.style.backgroundColor = "rgba(30, 63, 102, 0.2)";
+
+                    // 更新播放/暂停按钮状态
+                    if (playPauseBtn) {
+                      playPauseBtn.innerHTML = '<i class="ri-pause-fill ri-lg"></i>';
+                    }
+
+                    // 监听视频播放进度
+                    video.addEventListener("timeupdate", updateProgressBar);
+
+                    // 监听视频结束事件
+                    video.addEventListener("ended", function () {
+                      closeExpandedCard(card);
+                    });
+                  }
+                });
+              }
+
+              // 播放/暂停按钮点击事件
+              if (playPauseBtn) {
+                playPauseBtn.addEventListener("click", function (e) {
+                  e.stopPropagation();
+                  if (video) {
+                    if (video.paused) {
+                      video.play();
+                      this.innerHTML = '<i class="ri-pause-fill ri-lg"></i>';
+                    } else {
+                      video.pause();
+                      this.innerHTML = '<i class="ri-play-fill ri-lg"></i>';
+                    }
+                  }
+                });
+              }
+
+              // 进度条点击事件
+              if (progressContainer) {
+                progressContainer.addEventListener("click", function (e) {
+                  e.stopPropagation();
+                  if (video) {
+                    const rect = this.getBoundingClientRect();
+                    const pos = (e.clientX - rect.left) / rect.width;
+                    video.currentTime = pos * video.duration;
+                    updateProgressBar();
+                  }
+                });
+              }
+
+              // 音量按钮点击事件
+              if (volumeBtn) {
+                volumeBtn.addEventListener("click", function (e) {
+                  e.stopPropagation();
+                  if (video) {
+                    if (video.muted) {
+                      video.muted = false;
+                      this.innerHTML = '<i class="ri-volume-up-line ri-lg"></i>';
+                      volumeLevel.style.width = video.volume * 100 + "%";
+                    } else {
+                      video.muted = true;
+                      this.innerHTML = '<i class="ri-volume-mute-line ri-lg"></i>';
+                      volumeLevel.style.width = "0";
+                    }
+                  }
+                });
+              }
+
+              // 音量滑块点击事件
+              if (volumeSlider) {
+                volumeSlider.addEventListener("click", function (e) {
+                  e.stopPropagation();
+                  if (video) {
+                    const rect = this.getBoundingClientRect();
+                    const pos = (e.clientX - rect.left) / rect.width;
+                    video.volume = Math.max(0, Math.min(1, pos));
+                    volumeLevel.style.width = video.volume * 100 + "%";
+
+                    if (video.volume === 0) {
+                      volumeBtn.innerHTML = '<i class="ri-volume-mute-line ri-lg"></i>';
+                      video.muted = true;
+                    } else {
+                      volumeBtn.innerHTML = '<i class="ri-volume-up-line ri-lg"></i>';
+                      video.muted = false;
+                    }
+                  }
+                });
+              }
+
+              // 更新进度条
+              function updateProgressBar() {
+                if (video && progressBar) {
+                  const percentage = (video.currentTime / video.duration) * 100;
+                  progressBar.style.width = percentage + "%";
+                }
+              }
             });
+            // 点击页面其他区域关闭展开的卡片
+            document.addEventListener("click", function (e) {
+              if (activeCard && !activeCard.contains(e.target)) {
+                closeExpandedCard(activeCard);
+              }
+            });
+            // 关闭展开的卡片
+            function closeExpandedCard(card) {
+              if (!card) return;
+
+              const video = card.querySelector("video");
+              const playBtn = card.querySelector(".video-play-btn");
+              const playPauseBtn = card.querySelector(".play-pause-btn");
+
+              card.classList.remove("expanded");
+
+              if (video) {
+                video.pause();
+                video.currentTime = 0;
+                video.removeEventListener("timeupdate", updateProgressBar);
+                video.removeEventListener("ended", closeExpandedCard);
+              }
+
+              if (playBtn) {
+                playBtn.style.display = "flex";
+                playBtn.innerHTML = '<i class="ri-play-fill ri-2x text-primary"></i>';
+              }
+
+              if (playPauseBtn) {
+                playPauseBtn.innerHTML = '<i class="ri-play-fill ri-lg"></i>';
+              }
+
+              const overlay = card.querySelector(".service-video .absolute");
+              if (overlay) {
+                overlay.style.backgroundColor = "rgba(30, 63, 102, 0.5)";
+              }
+
+              activeCard = null;
+            }
+            // 通用更新进度条函数
+            function updateProgressBar() {
+              if (!activeCard) return;
+
+              const video = activeCard.querySelector("video");
+              const progressBar = activeCard.querySelector(".progress-bar");
+
+              if (video && progressBar) {
+                const percentage = (video.currentTime / video.duration) * 100;
+                progressBar.style.width = percentage + "%";
+              }
+            }
           });
         </script>
       </div>
@@ -2206,7 +2558,6 @@
                 class="text-gray-400 hover:text-white transition-colors"
                 >网站地图</a
               >
-			  <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114271648221870&bvid=BV1X8fgYuELy&cid=29207693721&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
             </div>
           </div>
         </div>
